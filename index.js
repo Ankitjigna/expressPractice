@@ -45,5 +45,8 @@ app.listen(port,()=>{
 
 app.get("/search",(req,res)=>{
     let { q }= req.query;
+    if (!q){
+        res.send("nothing searched");
+    }
     res.send(`this is ${ q }`);
 });
